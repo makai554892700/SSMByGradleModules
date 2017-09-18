@@ -1,0 +1,3 @@
+rootProject.name = 'SSMByGradleModules'
+include 'core', 'service', 'web'
+

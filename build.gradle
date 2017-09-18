@@ -1,0 +1,38 @@
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+}
+// 所有子项目的通用配置
+subprojects {
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    //定义版本号
+    ext {
+        springVersion = '4.0.2.RELEASE'
+    }
+    //默认仓库地址
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // 通用依赖
+        compile(
+                "org.springframework:spring-core:$springVersion",
+                "org.springframework:spring-web:$springVersion",
+                "org.springframework:spring-oxm:$springVersion",
+                "org.springframework:spring-tx:$springVersion",
+                "org.springframework:spring-jdbc:$springVersion",
+                "org.springframework:spring-webmvc:$springVersion",
+                "org.springframework:spring-aop:$springVersion",
+                "org.springframework:spring-context-support:$springVersion",
+                //java ee jar 包
+                "javax:javaee-api:7.0",
+                //日志文件管理包
+                "log4j:log4j:1.2.17",
+                //格式化对象
+                "com.alibaba:fastjson:1.1.41",
+                "org.slf4j:slf4j-api:1.7.7",
+                "org.slf4j:slf4j-log4j12:1.7.7"
+        )
+    }
+}

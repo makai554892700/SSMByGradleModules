@@ -1,0 +1,13 @@
+dependencies {
+    compile project(':core')
+    //mybatis核心包
+    compile 'org.mybatis:mybatis:3.2.6'
+    //mybatis/spring包
+    compile 'org.mybatis:mybatis-spring:1.2.2'
+    //Mysql数据库链接jar包
+    compile 'mysql:mysql-connector-java:5.1.30'
+    //dbcp的jar包，用来在applicationContext.xml中配置数据库
+    compile 'commons-dbcp:commons-dbcp:1.2.2'
+    //映入JSON
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+}
